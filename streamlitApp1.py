@@ -57,7 +57,7 @@ else:
     if np.argmax(prediction) == 0:
         st.write("It is an apple!")
         st.write("Usually comes in red and green color")
-    else np.argmax(prediction) == 1:
+    else:
         st.write("It is a tomatoe!")
     
     st.text("Probability (0: Apples, 1: Tomatoes)")
