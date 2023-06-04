@@ -15,7 +15,7 @@ import numpy as np
 # In[7]:
 
 
-model = tf.keras.models.load_model('web1ABO_v2.h5')
+model = tf.keras.models.load_model('keras_model.h5')
 
 
 # In[8]:
@@ -34,7 +34,7 @@ file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
 
 def import_and_predict(image_data, model):
     
-    size = (100,100)    
+    size = (224,224)    
     image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
     image = np.asarray(image)
     my_image = image/255
@@ -57,12 +57,10 @@ else:
     if np.argmax(prediction) == 0:
         st.write("It is an apple!")
         st.write("Usually comes in red and green color")
-    elif np.argmax(prediction) == 1:
-        st.write("It is a banana!")
-    else:
-        st.write("It is an orange!")
+    else np.argmax(prediction) == 1:
+        st.write("It is a tomatoe!")
     
-    st.text("Probability (0: Apple, 1: Banana, 2: Orange)")
+    st.text("Probability (0: Apples, 1: Tomatoes)")
     st.write(prediction)
 
 
