@@ -25,7 +25,7 @@ st.write("""
          # Fruit Classifier
          """
          )
-st.write("This is a simple image classification web app to classify fruits: Apples, Bananas, and Oranges")
+st.write("This is a simple image classification web app to classify fruits: Apples, Tomatoes")
 file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
 
 
